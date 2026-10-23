@@ -1,0 +1,219 @@
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.recipe-form__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.recipe-form__label {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.recipe-form__count {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-green-50);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-green-700);
+}
+
+.recipe-form__field {
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition:
+    border-color 0.2s var(--ease-out),
+    box-shadow 0.2s var(--ease-out);
+}
+
+.recipe-form__field:hover {
+  border-color: #c3b69d;
+}
+
+.recipe-form__field:focus-within {
+  border-color: var(--color-green-600);
+  box-shadow: 0 0 0 4px rgb(42 98 70 / 0.12);
+}
+
+.recipe-form__field--invalid,
+.recipe-form__field--invalid:hover {
+  border-color: var(--color-danger);
+}
+
+.recipe-form__field--invalid:focus-within {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 4px rgb(165 63 43 / 0.12);
+}
+
+.recipe-form__textarea {
+  display: block;
+  width: 100%;
+  min-height: 132px;
+  padding: 16px 18px 8px;
+  border: 0;
+  background: transparent;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  resize: vertical;
+  outline: none;
+}
+
+.recipe-form__textarea::placeholder {
+  color: #a7a99c;
+}
+
+.recipe-form__field-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 4px 8px 6px 18px;
+}
+
+.recipe-form__hint {
+  min-width: 0;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.recipe-form__hint kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--color-border);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  background: var(--color-surface-muted);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.recipe-form__field-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.recipe-form__length {
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  color: #a3a597;
+}
+
+.recipe-form__clear {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-muted);
+  transition:
+    background-color 0.2s var(--ease-out),
+    color 0.2s var(--ease-out);
+}
+
+.recipe-form__clear:hover {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+.recipe-form__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: -4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-danger);
+  animation: fade-up 0.25s var(--ease-out) both;
+}
+
+.recipe-form__error svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.recipe-form__submit {
+  margin-top: 10px;
+}
+
+/* ---------- Chips ---------- */
+
+.chips {
+  margin-top: 6px;
+}
+
+.chips__title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.chips__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 7px 14px 7px 11px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-muted);
+  font-size: 0.9063rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  transition:
+    background-color 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    transform 0.15s var(--ease-out);
+}
+
+.chip svg {
+  color: var(--color-green-600);
+  transition: color 0.2s var(--ease-out);
+}
+
+.chip:hover {
+  border-color: var(--color-green-200);
+  background: var(--color-green-50);
+  color: var(--color-green-800);
+}
+
+.chip:active {
+  transform: scale(0.97);
+}
+
+.chip--active,
+.chip--active:hover {
+  border-color: var(--color-green-700);
+  background: var(--color-green-700);
+  color: #fbf8f1;
+}
+
+.chip--active svg {
+  color: var(--color-accent-soft);
+}
