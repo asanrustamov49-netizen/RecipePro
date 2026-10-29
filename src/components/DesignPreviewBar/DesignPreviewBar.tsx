@@ -27,10 +27,6 @@ function getActiveKind(state: RecipeState): PreviewKind | null {
   }
 }
 
-/**
- * Панель разработчика для просмотра всех состояний области результата.
- * Не участвует в генерации и скрывается флагом SHOW_DESIGN_PREVIEW.
- */
 export function DesignPreviewBar({ state, onSelect }: DesignPreviewBarProps) {
   const active = getActiveKind(state);
 
