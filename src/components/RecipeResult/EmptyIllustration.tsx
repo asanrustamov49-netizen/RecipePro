@@ -2,7 +2,6 @@ interface EmptyIllustrationProps {
   className?: string;
 }
 
-/** Иллюстрация пустого состояния: миска с продуктами и паром. */
 export function EmptyIllustration({ className }: EmptyIllustrationProps) {
   return (
     <svg

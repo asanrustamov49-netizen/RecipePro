@@ -4,7 +4,6 @@ import { Icon } from '../icons/Icon';
 
 type RecipeMetaProps = Pick<Recipe, 'cookingTimeMinutes' | 'servings' | 'difficulty'>;
 
-/** Бейджи времени, порций и сложности. Отсутствующие данные просто не выводятся. */
 export function RecipeMeta({ cookingTimeMinutes, servings, difficulty }: RecipeMetaProps) {
   if (!cookingTimeMinutes && !servings && !difficulty) return null;
 

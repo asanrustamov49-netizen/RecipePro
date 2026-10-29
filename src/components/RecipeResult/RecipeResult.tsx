@@ -10,7 +10,6 @@ interface RecipeResultProps {
   onRetry: () => void;
   onReset: () => void;
   onCancel: () => void;
-  /** Показ демо-примера; передаётся только при включённом предпросмотре дизайна. */
   onShowDemo?: () => void;
 }
 
