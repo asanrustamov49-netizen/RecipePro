@@ -14,7 +14,7 @@ interface RecipeFormProps {
   isLoading: boolean;
 }
 
-const EMPTY_ERROR = 'Добавьте хотя бы один продукт — например, «картофель, яйца, сыр».';
+const EMPTY_ERROR = 'Добавьте хотя бы один продукт — например, «картофель, яйца и сыр».';
 
 export function RecipeForm({ value, onChange, onSubmit, isLoading }: RecipeFormProps) {
   const [error, setError] = useState<string | null>(null);
