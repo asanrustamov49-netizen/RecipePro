@@ -158,8 +158,6 @@ button {
   color: var(--color-green-600);
 }
 
-/* ---------- Buttons ---------- */
-
 .btn {
   display: inline-flex;
   align-items: center;

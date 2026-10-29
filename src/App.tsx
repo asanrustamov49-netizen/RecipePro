@@ -13,7 +13,6 @@ import type { RecipeState } from './types/recipe';
 import { parseIngredients } from './utils/ingredients';
 import './App.css';
 
-/** Состояния для панели предпросмотра. Демо-рецепт помечен source: 'demo'. */
 function createPreviewState(kind: PreviewKind, ingredients: string[]): RecipeState {
   switch (kind) {
     case 'idle':
@@ -52,7 +51,6 @@ export default function App() {
     void generate(ingredients);
   };
 
-  // На узких экранах результат находится под формой — прокручиваем к нему после отправки.
   useEffect(() => {
     if (!shouldScrollRef.current || state.status === 'idle') return;
     shouldScrollRef.current = false;
