@@ -10,17 +10,6 @@ export class RecipeServiceError extends Error {
   }
 }
 
-/**
- * Единая точка генерации рецепта для интерфейса.
- *
- * Этап 1: ИИ-модель не подключена, функция честно сообщает об этом
- * ошибкой `not_configured` и не имитирует работу ИИ.
- *
- * Этап 2: здесь появится запрос к собственному backend-эндпоинту
- * (например, POST /api/recipes/generate), который обращается к OmniRoute
- * с API-ключом на стороне сервера. Сигнатура функции останется прежней,
- * поэтому компоненты переписывать не придётся.
- */
 export async function generateRecipe(
   _request: RecipeRequest,
   _signal?: AbortSignal,

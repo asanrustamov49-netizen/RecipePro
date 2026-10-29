@@ -41,7 +41,6 @@ export function useRecipeGenerator() {
     setState({ status: 'idle' });
   }, [abortCurrent]);
 
-  /** Только для панели предпросмотра дизайна: напрямую выставляет состояние. */
   const showPreview = useCallback(
     (next: RecipeState) => {
       abortCurrent();

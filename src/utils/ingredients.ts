@@ -2,7 +2,6 @@ const SEPARATORS = /[,;\n]+/;
 
 const normalize = (value: string) => value.trim().toLocaleLowerCase('ru-RU');
 
-/** Разбирает ввод пользователя в список уникальных продуктов. */
 export function parseIngredients(value: string): string[] {
   const seen = new Set<string>();
   const result: string[] = [];
@@ -22,7 +21,6 @@ export function hasIngredient(value: string, name: string): boolean {
   return parseIngredients(value).some((item) => normalize(item) === key);
 }
 
-/** Добавляет продукт в строку ввода или убирает его, если он уже есть. */
 export function toggleIngredient(value: string, name: string): string {
   const list = parseIngredients(value);
   const key = normalize(name);

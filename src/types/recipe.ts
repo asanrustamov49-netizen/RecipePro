@@ -1,11 +1,9 @@
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
-/** Откуда взят рецепт: настоящая генерация ИИ или демонстрационные данные для проверки дизайна. */
 export type RecipeSource = 'ai' | 'demo';
 
 export interface RecipeIngredient {
   name: string;
-  /** Количество в свободной форме: «500 г», «2 шт.», «по вкусу». */
   amount?: string;
 }
 
