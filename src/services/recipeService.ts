@@ -2,14 +2,12 @@ import type { Recipe, RecipeError, RecipeErrorCode, RecipeRequest } from '../typ
 
 export class RecipeServiceError extends Error {
   readonly code: RecipeErrorCode;
-
   constructor(code: RecipeErrorCode, message: string) {
     super(message);
     this.name = 'RecipeServiceError';
     this.code = code;
   }
 }
-
 export async function generateRecipe(
   _request: RecipeRequest,
   _signal?: AbortSignal,
@@ -19,7 +17,6 @@ export async function generateRecipe(
     'Генерация рецептов будет доступна после подключения ИИ-модели.',
   );
 }
-
 export function toRecipeError(error: unknown): RecipeError {
   if (error instanceof RecipeServiceError) {
     return { code: error.code, message: error.message };
