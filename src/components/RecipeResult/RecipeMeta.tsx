@@ -6,7 +6,6 @@ type RecipeMetaProps = Pick<Recipe, 'cookingTimeMinutes' | 'servings' | 'difficu
 
 export function RecipeMeta({ cookingTimeMinutes, servings, difficulty }: RecipeMetaProps) {
   if (!cookingTimeMinutes && !servings && !difficulty) return null;
-
   return (
     <ul className="recipe-meta" aria-label="Параметры блюда">
       {cookingTimeMinutes ? (
