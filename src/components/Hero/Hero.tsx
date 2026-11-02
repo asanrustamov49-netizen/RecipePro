@@ -15,16 +15,13 @@ export function Hero() {
           <Icon name="sparkles" size={15} />
           Кулинарный ИИ-ассистент
         </span>
-
         <h1 id="hero-title" className="hero__title">
           Что приготовим <em>сегодня?</em>
         </h1>
-
         <p className="hero__subtitle">
           Перечислите продукты из холодильника — и получите рецепт блюда, которое можно
           приготовить прямо сейчас, без похода в магазин.
         </p>
-
         <ul className="hero__highlights">
           {HIGHLIGHTS.map((item) => (
             <li key={item.label} className="hero__highlight">
