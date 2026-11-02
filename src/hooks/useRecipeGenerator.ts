@@ -6,12 +6,10 @@ export function useRecipeGenerator() {
   const [state, setState] = useState<RecipeState>({ status: 'idle' });
   const controllerRef = useRef<AbortController | null>(null);
   const lastIngredientsRef = useRef<string[] | null>(null);
-
   const abortCurrent = useCallback(() => {
     controllerRef.current?.abort();
     controllerRef.current = null;
   }, []);
-
   const generate = useCallback(
     async (ingredients: string[]) => {
       abortCurrent();
@@ -19,7 +17,6 @@ export function useRecipeGenerator() {
       controllerRef.current = controller;
       lastIngredientsRef.current = ingredients;
       setState({ status: 'loading', ingredients });
-
       try {
         const recipe = await generateRecipe({ ingredients }, controller.signal);
         if (!controller.signal.aborted) setState({ status: 'success', recipe });
