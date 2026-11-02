@@ -6,7 +6,6 @@ interface IngredientChipsProps {
   value: string;
   onToggle: (name: string) => void;
 }
-
 export function IngredientChips({ items, value, onToggle }: IngredientChipsProps) {
   return (
     <div className="chips">
