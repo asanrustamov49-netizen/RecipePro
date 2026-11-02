@@ -1,11 +1,9 @@
 const SEPARATORS = /[,;\n]+/;
-
 const normalize = (value: string) => value.trim().toLocaleLowerCase('ru-RU');
 
 export function parseIngredients(value: string): string[] {
   const seen = new Set<string>();
   const result: string[] = [];
-
   for (const part of value.split(SEPARATORS)) {
     const item = part.trim().replace(/\s+/g, ' ');
     const key = normalize(item);
@@ -15,12 +13,10 @@ export function parseIngredients(value: string): string[] {
   }
   return result;
 }
-
 export function hasIngredient(value: string, name: string): boolean {
   const key = normalize(name);
   return parseIngredients(value).some((item) => normalize(item) === key);
 }
-
 export function toggleIngredient(value: string, name: string): string {
   const list = parseIngredients(value);
   const key = normalize(name);
