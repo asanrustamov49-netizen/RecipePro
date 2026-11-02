@@ -14,7 +14,6 @@ export function Header() {
         <a href="#top" className="header__brand" aria-label="AI Recipe Generator — на главную">
           <Logo />
         </a>
-
         <nav className="header__nav" aria-label="Основная навигация">
           {NAV_LINKS.map((link) => (
             <a key={link.href} href={link.href} className="header__link">
@@ -22,7 +21,6 @@ export function Header() {
             </a>
           ))}
         </nav>
-
         <div className="header__ai" title="Ассистент на базе ИИ">
           <span className="header__ai-icon">
             <Icon name="sparkles" size={16} />
