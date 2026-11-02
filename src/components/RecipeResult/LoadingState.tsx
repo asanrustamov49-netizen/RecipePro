@@ -20,7 +20,6 @@ export function LoadingState({ ingredients, onCancel }: LoadingStateProps) {
           Отменить
         </button>
       </div>
-
       {ingredients.length > 0 && (
         <ul className="state-loading__tags" aria-label="Продукты в запросе">
           {ingredients.map((item) => (
@@ -28,7 +27,6 @@ export function LoadingState({ ingredients, onCancel }: LoadingStateProps) {
           ))}
         </ul>
       )}
-
       <div className="skeleton" aria-hidden="true">
         <span className="skeleton__line skeleton__line--title" />
         <span className="skeleton__line" />
