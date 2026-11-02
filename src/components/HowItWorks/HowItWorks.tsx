@@ -29,7 +29,6 @@ export function HowItWorks() {
             Три шага от холодильника до ужина
           </h2>
         </div>
-
         <ol className="how__grid">
           {STEPS.map((step, index) => (
             <li key={step.title} className="how__card">
