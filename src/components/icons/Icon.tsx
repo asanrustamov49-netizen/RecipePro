@@ -103,14 +103,12 @@ const ICONS = {
 } satisfies Record<string, ReactNode>;
 
 export type IconName = keyof typeof ICONS;
-
 interface IconProps {
   name: IconName;
   size?: number;
   strokeWidth?: number;
   className?: string;
 }
-
 export function Icon({ name, size = 20, strokeWidth = 1.75, className }: IconProps) {
   return (
     <svg
