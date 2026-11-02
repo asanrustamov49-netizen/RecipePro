@@ -15,9 +15,7 @@ export function RecipeCard({ recipe, onReset }: RecipeCardProps) {
   const [copyStatus, setCopyStatus] = useState<CopyStatus>('idle');
   const timerRef = useRef<number | undefined>(undefined);
   const isDemo = recipe.source === 'demo';
-
   useEffect(() => () => window.clearTimeout(timerRef.current), []);
-
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(recipeToPlainText(recipe));
@@ -28,7 +26,6 @@ export function RecipeCard({ recipe, onReset }: RecipeCardProps) {
     window.clearTimeout(timerRef.current);
     timerRef.current = window.setTimeout(() => setCopyStatus('idle'), 2200);
   };
-
   return (
     <article className="result-panel recipe-card" aria-labelledby="recipe-title">
       {isDemo && (
@@ -40,7 +37,6 @@ export function RecipeCard({ recipe, onReset }: RecipeCardProps) {
           </p>
         </div>
       )}
-
       <header className="recipe-card__header">
         <span className="eyebrow">
           <Icon name="leaf" size={15} />
@@ -56,7 +52,6 @@ export function RecipeCard({ recipe, onReset }: RecipeCardProps) {
           difficulty={recipe.difficulty}
         />
       </header>
-
       <div className="recipe-card__body">
         <section className="recipe-card__ingredients" aria-labelledby="ingredients-title">
           <h3 id="ingredients-title" className="recipe-card__section-title">
@@ -72,7 +67,6 @@ export function RecipeCard({ recipe, onReset }: RecipeCardProps) {
             ))}
           </ul>
         </section>
-
         <section className="recipe-card__steps" aria-labelledby="steps-title">
           <h3 id="steps-title" className="recipe-card__section-title">
             <Icon name="utensils" size={20} />
@@ -93,7 +87,6 @@ export function RecipeCard({ recipe, onReset }: RecipeCardProps) {
           </ol>
         </section>
       </div>
-
       {recipe.tips && recipe.tips.length > 0 && (
         <aside className="recipe-card__tips" aria-label="Советы">
           <span className="recipe-card__tips-icon">
@@ -109,7 +102,6 @@ export function RecipeCard({ recipe, onReset }: RecipeCardProps) {
           </div>
         </aside>
       )}
-
       <footer className="recipe-card__actions">
         <button type="button" className="btn btn--secondary" onClick={handleCopy}>
           <Icon name={copyStatus === 'copied' ? 'check' : 'copy'} size={18} />
