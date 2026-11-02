@@ -9,7 +9,6 @@ interface ErrorStateProps {
 
 export function ErrorState({ error, onRetry, onShowDemo }: ErrorStateProps) {
   const notConfigured = error.code === 'not_configured';
-
   return (
     <div
       className={`result-panel result-panel--centered state-error${notConfigured ? ' state-error--info' : ''}`}
@@ -18,7 +17,6 @@ export function ErrorState({ error, onRetry, onShowDemo }: ErrorStateProps) {
       <span className="state-error__icon">
         <Icon name={notConfigured ? 'plug' : 'alert'} size={26} />
       </span>
-
       <h2 className="state__title state__title--sm">
         {notConfigured ? 'ИИ-модель пока не подключена' : 'Не удалось придумать рецепт'}
       </h2>
@@ -28,7 +26,6 @@ export function ErrorState({ error, onRetry, onShowDemo }: ErrorStateProps) {
           Интерфейс готов к работе — генерация появится на следующем этапе разработки.
         </p>
       )}
-
       <div className="state__actions">
         {!notConfigured && (
           <button type="button" className="btn btn--primary" onClick={onRetry}>
