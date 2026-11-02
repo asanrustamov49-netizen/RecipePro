@@ -22,15 +22,12 @@ export function RecipeForm({ value, onChange, onSubmit, isLoading }: RecipeFormP
   const fieldId = useId();
   const hintId = `${fieldId}-hint`;
   const errorId = `${fieldId}-error`;
-
   const ingredients = parseIngredients(value);
   const count = ingredients.length;
-
   const handleChange = (next: string) => {
     onChange(next);
     if (error && parseIngredients(next).length > 0) setError(null);
   };
-
   const submit = () => {
     if (isLoading) return;
     if (count === 0) {
@@ -41,24 +38,20 @@ export function RecipeForm({ value, onChange, onSubmit, isLoading }: RecipeFormP
     setError(null);
     onSubmit(ingredients);
   };
-
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     submit();
   };
-
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
       event.preventDefault();
       submit();
     }
   };
-
   const handleClear = () => {
     handleChange('');
     textareaRef.current?.focus();
   };
-
   return (
     <form className="recipe-form" onSubmit={handleSubmit} noValidate>
       <div className="recipe-form__head">
@@ -71,7 +64,6 @@ export function RecipeForm({ value, onChange, onSubmit, isLoading }: RecipeFormP
           </span>
         )}
       </div>
-
       <div className={`recipe-form__field${error ? ' recipe-form__field--invalid' : ''}`}>
         <textarea
           ref={textareaRef}
@@ -87,7 +79,6 @@ export function RecipeForm({ value, onChange, onSubmit, isLoading }: RecipeFormP
           aria-describedby={error ? `${errorId} ${hintId}` : hintId}
           spellCheck
         />
-
         <div className="recipe-form__field-footer">
           <span id={hintId} className="recipe-form__hint">
             Через запятую · <kbd>Ctrl</kbd> + <kbd>Enter</kbd> — отправить
@@ -109,20 +100,17 @@ export function RecipeForm({ value, onChange, onSubmit, isLoading }: RecipeFormP
           </div>
         </div>
       </div>
-
       {error && (
         <p id={errorId} className="recipe-form__error" role="alert">
           <Icon name="alert" size={16} />
           {error}
         </p>
       )}
-
       <IngredientChips
         items={POPULAR_INGREDIENTS}
         value={value}
         onToggle={(name) => handleChange(toggleIngredient(value, name))}
       />
-
       <button
         type="submit"
         className="btn btn--primary btn--lg btn--block recipe-form__submit"
