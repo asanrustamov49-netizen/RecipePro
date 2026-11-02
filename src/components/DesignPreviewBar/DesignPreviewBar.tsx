@@ -3,19 +3,16 @@ import { Icon } from '../icons/Icon';
 import './DesignPreviewBar.css';
 
 export type PreviewKind = 'idle' | 'loading' | 'error' | 'demo';
-
 const OPTIONS: { kind: PreviewKind; label: string }[] = [
   { kind: 'idle', label: 'Пусто' },
   { kind: 'loading', label: 'Загрузка' },
   { kind: 'error', label: 'Ошибка' },
   { kind: 'demo', label: 'Демо-рецепт' },
 ];
-
 interface DesignPreviewBarProps {
   state: RecipeState;
   onSelect: (kind: PreviewKind) => void;
 }
-
 function getActiveKind(state: RecipeState): PreviewKind | null {
   switch (state.status) {
     case 'idle':
@@ -29,7 +26,6 @@ function getActiveKind(state: RecipeState): PreviewKind | null {
 
 export function DesignPreviewBar({ state, onSelect }: DesignPreviewBarProps) {
   const active = getActiveKind(state);
-
   return (
     <div className="preview-bar" role="group" aria-label="Предпросмотр состояний интерфейса">
       <span className="preview-bar__label">
